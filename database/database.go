@@ -86,7 +86,7 @@ func GetUsers() []PersonDto {
 func AddUser(name string) error {
 	file, err := os.ReadFile(path)
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 	users := []PersonDto{}
 	json.Unmarshal(file, &users)

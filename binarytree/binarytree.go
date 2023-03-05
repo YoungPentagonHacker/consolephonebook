@@ -3,7 +3,7 @@ package binarytree
 import (
 	"fmt"
 
-	db "../database"
+	db "github.com/YoungPentagonHacker/consolephonebook/database"
 )
 
 type Node struct {
@@ -13,7 +13,7 @@ type Node struct {
 }
 
 func CreateTree(users []db.PersonDto) (root Node) {
-	if users != nil {
+	if len(users) != 0 {
 		root = Node{users[0], nil, nil}
 	}
 	for i := 1; i < len(users); i++ {
